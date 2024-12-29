@@ -1,13 +1,13 @@
-<script setup lang="ts">
-import TasksDesk from '@/components/TasksDesk.vue'
-</script>
-
 <template>
   <div class="main">
     <TasksDesk />
   </div>
-
 </template>
+
+<script setup lang="ts">
+import TasksDesk from '@/components/TasksDesk.vue';
+import { onMounted, ref } from 'vue';
+</script>
 
 <style scoped>
 .main {
