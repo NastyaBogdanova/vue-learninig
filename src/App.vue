@@ -1,12 +1,22 @@
 <template>
   <div class="main">
-    <TasksDesk />
+    <BaseLoader v-if="!getTasksList.length" />
+    <TasksDesk v-else />
   </div>
 </template>
 
 <script setup lang="ts">
-import TasksDesk from '@/components/TasksDesk.vue';
-import { onMounted, ref } from 'vue';
+import TasksDesk from '@/components/tasks/TasksDesk.vue';
+import BaseLoader from '@/components/base/BaseLoader.vue';
+import { onMounted } from 'vue';
+import useTaskModule from '@/store/taskModule.ts';
+
+const { loadTasksList, getTasksList } = useTaskModule();
+
+onMounted(() => {
+  loadTasksList();
+});
+
 </script>
 
 <style scoped>
