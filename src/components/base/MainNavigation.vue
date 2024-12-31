@@ -24,7 +24,7 @@
         v-else
         icon="mdi-login"
         variant="text"
-        @click.stop="loginUser"
+        @click.stop="login"
         title="Login"
       ></v-btn>
     </v-list>
@@ -32,10 +32,13 @@
     <v-divider></v-divider>
 
     <v-list v-if="getUser.id" density="compact" nav>
-      <v-list-item prepend-icon="mdi-home-city" title="Home" value="home"></v-list-item>
-      <v-list-item prepend-icon="mdi-list-box-outline" title="Dashboard" value="dashboard"></v-list-item>
-      <v-list-item prepend-icon="mdi-account" title="My Account" value="account"></v-list-item>
-      <v-list-item v-if="getUser.type === UserTypes.ADMIN" prepend-icon="mdi-account-group-outline" title="Users" value="users"></v-list-item>
+      <v-list-item
+        v-for="menuItem in getUser.menu"
+        :key="menuItem.value"
+        :prepend-icon="`mdi-${menuItem.icon}`"
+        :title="menuItem.title"
+        :value="menuItem.value"
+      />
     </v-list>
     <template
         v-if="isOpened"
@@ -58,7 +61,6 @@
 <script lang="ts" setup>
 import useUserModule from '@/store/userModule.ts';
 import { computed, ref } from 'vue';
-import { UserTypes } from '@/enums/user.ts';
 
 const { getUser, loginUser, logoutUser } = useUserModule();
 const drawer = ref(true);
@@ -66,6 +68,10 @@ const rail = ref(true);
 
 const isOpened = computed(() => getUser.value.id && !rail.value);
 
+const login = async () => {
+  await loginUser();
+  rail.value = false;
+};
 const logout = () => {
   rail.value = true;
   logoutUser();

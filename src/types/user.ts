@@ -5,4 +5,12 @@ export interface User {
   name: string,
   imgUrl: string,
   type: UserTypes,
+  menu: UserMenu[],
+}
+
+interface UserMenu {
+  url: string,
+  title: string,
+  icon: string,
+  value: string,
 }
