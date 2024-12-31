@@ -42,10 +42,10 @@
   width: 22px;
   height: 60px;
   background:
-      linear-gradient(90deg,#000 4px,#0000 0 calc(100% - 4px),#000 0) bottom            /22px 20px,
-      linear-gradient(90deg,red  4px,#0000 0 calc(100% - 4px),red  0) bottom 10px left 0/22px 6px,
-      linear-gradient(#000 0 0) bottom 3px left 0  /22px 8px,
-      linear-gradient(#000 0 0) bottom 0   left 50%/8px  16px;
+      linear-gradient(90deg,red 4px,#0000 0 calc(100% - 4px),red 0) bottom            /22px 20px,
+      linear-gradient(90deg,#fff  4px,#0000 0 calc(100% - 4px),#fff  0) bottom 10px left 0/22px 6px,
+      linear-gradient(red 0 0) bottom 3px left 0  /22px 8px,
+      linear-gradient(red 0 0) bottom 0   left 50%/8px  16px;
   background-repeat: no-repeat;
   animation: l9-1 2s infinite;
 }

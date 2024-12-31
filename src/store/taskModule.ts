@@ -1,13 +1,13 @@
 import { computed, reactive } from 'vue';
 import { getTasksRequest } from '@/api/api.ts';
-import { Task } from '@/types/task.ts';
+import { Task } from '@/types/Task.ts';
 
 export const state: {tasksList: Task[]} = reactive({
   tasksList: [],
 });
 
 export default function useTaskModule () {
-  const loadTasksList = (val: boolean) => {
+  const loadTasksList = () => {
     getTasksRequest()
       .then((data) => {
         state.tasksList = data;
