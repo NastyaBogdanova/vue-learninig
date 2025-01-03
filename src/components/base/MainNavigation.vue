@@ -31,14 +31,23 @@
 
     <v-divider></v-divider>
 
-    <v-list v-if="getUser.id" density="compact" nav>
-      <v-list-item
+    <v-list
+      v-if="getUser.id"
+      density="compact"
+      nav
+    >
+      <RouterLink
         v-for="menuItem in getUser.menu"
+        :to="menuItem.url"
         :key="menuItem.value"
-        :prepend-icon="`mdi-${menuItem.icon}`"
-        :title="menuItem.title"
-        :value="menuItem.value"
-      />
+      >
+        <v-list-item
+          :prepend-icon="`mdi-${menuItem.icon}`"
+          :title="menuItem.title"
+          :value="menuItem.value"
+        >
+      </v-list-item>
+      </RouterLink>
     </v-list>
     <template
         v-if="isOpened"

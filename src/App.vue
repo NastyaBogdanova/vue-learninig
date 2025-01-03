@@ -5,7 +5,12 @@
         <v-main class="main">
           <v-container fluid>
             <BaseLoader v-if="!getTasksList.length" />
-            <TasksDesk v-else />
+            <div v-else>
+              <v-divider>
+                <h1>{{ route.name }}</h1>
+              </v-divider>
+              <RouterView class="mt-10" />
+            </div>
           </v-container>
         </v-main>
       </v-layout>
@@ -13,11 +18,14 @@
 </template>
 
 <script setup lang="ts">
-import TasksDesk from '@/components/tasks/TasksDesk.vue';
 import BaseLoader from '@/components/base/BaseLoader.vue';
 import { onMounted } from 'vue';
 import useTaskModule from '@/store/taskModule.ts';
 import MainNavigation from '@/components/base/MainNavigation.vue';
+import { useRoute, useRouter } from 'vue-router'
+
+const router = useRouter()
+const route = useRoute()
 
 const { loadTasksList, getTasksList } = useTaskModule();
 

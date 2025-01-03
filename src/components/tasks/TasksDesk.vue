@@ -1,6 +1,4 @@
 <template>
-  <h1 class="center">Tasks</h1>
-
   <ul class="list desk">
     <li v-for="task in getTasksList">
       <TaskCard :task='task'/>

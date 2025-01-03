@@ -7,6 +7,12 @@ export interface User {
   type: UserTypes,
   menu: UserMenu[],
 }
+export interface Account {
+  id: number,
+  name: string,
+  email: string,
+  password: string,
+}
 
 interface UserMenu {
   url: string,

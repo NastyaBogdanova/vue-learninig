@@ -1,26 +1,29 @@
 import { computed, reactive } from 'vue';
-import { User } from '@/types/user.ts';
+import { Account, User } from '@/types/user.ts';
 import { UserTypes } from '@/enums/user.ts';
-import { getUser } from '@/api/user.ts';
+import { getAccount, getUser } from '@/api/user.ts';
 
-export const state: {user: User} = reactive({
+export const state: {user: User, account: Account, activeUserType: UserTypes} = reactive({
   user: {} as User,
+  account: {} as Account,
+  activeUserType: UserTypes.ADMIN,
 });
 
 export default function useUserModule () {
-  const setUser = (val: User) => {
-    state.user = val;
-  };
   const loginUser = async () => {
-    setUser(await getUser(UserTypes.ADMIN));
+    state.user = await getUser(state.activeUserType);
   };
   const logoutUser = () => {
     state.user = {} as User;
   };
+  const loadAccountInfo = async () => {
+    state.account = await getAccount(state.activeUserType)
+  };
   return {
     getUser: computed(() => state.user),
+    getAccount: computed(() => state.account),
     loginUser,
     logoutUser,
-    setUser,
+    loadAccountInfo,
   };
 }
