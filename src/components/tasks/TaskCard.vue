@@ -12,30 +12,18 @@
             <span class="row"><h3 class="cardSubtitle">Project ID:</h3> {{ task.projectId }}</span>
         </div>
     </div>
-      
+
   </template>
-  
+
   <script setup lang="ts">
-
-  
-  export interface Task {
-    id: number, 
-    typeName: string, 
-    summary: string, 
-    priorityId: string, 
-    done: boolean, 
-    statusName: string, 
-    projectId: number,
-  }
-
   interface Props {
     task: Task
   }
 
   const props = defineProps<Props>()
-  
+
   </script>
-  
+
   <style scoped>
   .card {
     border: 1px solid black;
