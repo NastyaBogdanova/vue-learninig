@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import TasksDesk from './components/TasksDesk.vue'
+import TasksDesk from '@/components/TasksDesk.vue'
 </script>
 
 <template>

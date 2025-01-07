@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import { getTasksRequest } from '../api/api'
+import { getTasksRequest } from '../service/tasks'
 import { Task } from './TaskCard.vue'
 import TaskCard from './TaskCard.vue'
 
