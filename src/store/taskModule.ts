@@ -1,5 +1,5 @@
 import { computed, reactive } from 'vue';
-import { getTasksRequest } from '@/api/api.ts';
+import { getTasksRequest } from '@/service/tasks.ts';
 import { Task } from '@/types/Task.ts';
 
 export const state: {tasksList: Task[]} = reactive({

@@ -1,6 +1,6 @@
 <template>
-  <ul class="list desk">
-    <li v-for="task in getTasksList">
+  <ul id="task-list" class="list desk">
+    <li v-for="task in getTasksList" :id="`task-${task.id}`">
       <TaskCard :task='task'/>
     </li>
   </ul>

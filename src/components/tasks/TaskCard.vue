@@ -2,25 +2,27 @@
     <div class="card">
         <h2>{{ task.summary }}</h2>
         <div class="cardInfo">
-            <span class="row"><h3 class="cardSubtitle">Name:</h3> {{ task.typeName }}</span>
-            <span class="row"><h3 class="cardSubtitle">Priority:</h3> {{ task.priorityId }}</span>
-            <span class="row"><h3 class="cardSubtitle">Status:</h3> {{ task.statusName }}</span>
+            <span class="row"><div class="cardSubtitle">Name:</div> {{ task.typeName }}</span>
+            <span class="row"><div class="cardSubtitle">Priority:</div> {{ task.priorityId }}</span>
+            <span class="row"><div class="cardSubtitle">Status:</div> {{ task.statusName }}</span>
         </div>
         <div class="cardInfo">
-            <span class="row"><h3 class="cardSubtitle">Done:</h3> {{ task.done }}</span>
-            <span class="row"><h3 class="cardSubtitle">ID:</h3> {{ task.id }}</span>
-            <span class="row"><h3 class="cardSubtitle">Project ID:</h3> {{ task.projectId }}</span>
+            <span class="row"><div class="cardSubtitle">Done:</div> {{ task.done }}</span>
+            <span class="row"><div class="cardSubtitle">ID:</div> {{ task.id }}</span>
+            <span class="row"><div class="cardSubtitle">Project ID:</div> {{ task.projectId }}</span>
         </div>
     </div>
 
   </template>
 
   <script setup lang="ts">
+  import {Task} from '@/types/Task'
+
   interface Props {
     task: Task
   }
 
-  const props = defineProps<Props>()
+  defineProps<Props>()
 
   </script>
 

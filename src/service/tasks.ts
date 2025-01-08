@@ -1,8 +1,6 @@
-const api: string = "http://localhost:3001/api/issues"
+import { api } from '@/utils/constants.ts';
 
-function getTasksRequest() {
-    return fetch(api)
+export function getTasksRequest() {
+    return fetch(`${api}/issues`)
         .then(response => response.json())
 }
-
-export { getTasksRequest }

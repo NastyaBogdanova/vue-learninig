@@ -1,7 +1,7 @@
 import { computed, reactive } from 'vue';
 import { Account, User } from '@/types/user.ts';
 import { UserTypes } from '@/enums/user.ts';
-import { getAccount, getUser } from '@/api/user.ts';
+import { getAccount, getUser } from '@/service/user.ts';
 
 export const state: {user: User, account: Account, activeUserType: UserTypes} = reactive({
   user: {} as User,
