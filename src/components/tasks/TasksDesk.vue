@@ -1,17 +1,16 @@
 <template>
   <ul id="task-list" class="list desk">
     <li v-for="task in getTasksList" :id="`task-${task.id}`">
-      <TaskCard :task='task'/>
+      <TaskCard :task="task" />
     </li>
   </ul>
 </template>
 
 <script setup lang="ts">
-import TaskCard from '@/components/tasks/TaskCard.vue'
-import useTaskModule from '@/store/taskModule.ts';
+import TaskCard from "@/components/tasks/TaskCard.vue";
+import useTaskModule from "@/store/taskModule.ts";
 
 const { getTasksList } = useTaskModule();
-
 </script>
 
 <style scoped>
