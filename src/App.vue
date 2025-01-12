@@ -22,11 +22,9 @@ import BaseLoader from '@/components/base/BaseLoader.vue';
 import { onMounted } from 'vue';
 import useTaskModule from '@/store/taskModule.ts';
 import MainNavigation from '@/components/base/MainNavigation.vue';
-import { useRoute, useRouter } from 'vue-router'
+import { useRoute } from 'vue-router';
 
-const router = useRouter()
-const route = useRoute()
-
+const route = useRoute();
 const { loadTasksList, getTasksList } = useTaskModule();
 
 onMounted(() => {
