@@ -1,44 +1,25 @@
 <template>
-  <TaskBug v-if="task.typeName === 'BUG'" :task="task"/>
-  <TaskStory v-else :task="task"/>
+  <div v-if="resolvedComponent">
+    <component :is="resolvedComponent" v-bind="props"/>
+  </div>
+  <p v-else>Unknown issue type</p>
 </template>
 
 <script setup lang="ts">
-import { Task } from '@/types/Task';
-import TaskBug from '@/components/tasks/TaskBug.vue';
-import TaskStory from '@/components/tasks/TaskStory.vue';
+import { ITaskRegistry, Task } from '@/types/Task.ts';
+import { inject, onMounted, shallowRef } from 'vue';
 
 interface Props {
   task: Task;
 }
 
-defineProps<Props>();
+const props = defineProps<Props>();
+const componentRegistry = inject<ITaskRegistry>('componentRegistry');
+const resolvedComponent = shallowRef();
 
+onMounted(async () => {
+  if (componentRegistry![props.task.typeName]) {
+    resolvedComponent.value = await componentRegistry![props.task.typeName];
+  }
+});
 </script>
-
-<style scoped>
-.card {
-  border: 1px solid black;
-  border-radius: 20px;
-  padding: 20px;
-  height: 100%;
-  box-sizing: border-box;
-}
-
-.cardInfo {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 5px;
-  margin: 20px 0;
-}
-
-.row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.cardSubtitle {
-  margin-right: 5px;
-}
-</style>

@@ -9,6 +9,10 @@
 <script setup lang="ts">
 import TaskCard from '@/components/tasks/TaskCard.vue'
 import useTaskModule from '@/store/taskModule.ts';
+import { provide } from 'vue';
+import { taskRegistry } from '@/components/tasks/taskRegistry.ts';
+
+provide('componentRegistry', taskRegistry);
 
 const { getTasksList } = useTaskModule();
 
