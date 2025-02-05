@@ -38,4 +38,6 @@ interface Props {
 }
 
 const props = defineProps<Props>();
+
+//как сделать value доступным у родительского компонента?
 </script>

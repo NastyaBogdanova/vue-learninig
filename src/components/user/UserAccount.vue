@@ -4,13 +4,14 @@
   </v-sheet>
 </template>
 <script setup>
-import { onMounted, ref } from "vue";
+import { computed, onMounted, reactive, ref } from "vue";
 import useUserModule from "@/store/userModule";
 import userAccountForm from "@/components/user/UserAccountForm.vue";
 
 const { loadAccountInfo, getAccount } = useUserModule();
 
 const inputsConfig = [
+  //почему getAccount пустой
   {
     label: "First name",
     value: getAccount.name,
@@ -57,6 +58,5 @@ console.log(inputsConfig);
 
 onMounted(() => {
   loadAccountInfo();
-  console.log(getAccount());
 });
 </script>
