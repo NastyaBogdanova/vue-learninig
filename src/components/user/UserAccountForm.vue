@@ -4,7 +4,7 @@
       <v-text-field
         :is="input.type !== 'phone'"
         :key="key"
-        :v-model="input.model"
+        :v-model="input.value"
         :rules="input.rules"
         :label="input.label"
         :type="input.type"
@@ -13,7 +13,7 @@
       <v-number-input
         :is="input.type == 'phone'"
         :key="key"
-        :v-model="input.model"
+        :v-model="input.value"
         :rules="input.rules"
         :label="input.label"
         :type="input.type"
@@ -29,7 +29,7 @@ interface UserAccountInput {
   type?: string;
   label: string;
   rules: [];
-  model: any;
+  value: any;
   required?: boolean;
 }
 
