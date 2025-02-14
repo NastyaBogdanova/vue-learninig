@@ -19,7 +19,7 @@ import { formInputConfig } from "@/components/user/userAccountFormConfig";
 import { reactive } from "vue";
 
 interface IField {
-  [key: string]: string | number;
+  [key: string]: string;
 }
 
 interface Props {

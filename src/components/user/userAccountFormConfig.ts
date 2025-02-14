@@ -38,8 +38,8 @@ export const formInputConfig = [
     type: "phone",
     label: "Phone Number",
     rules: [
-      (v: number) => !!v || "Phone number is required",
-      //(v: number) => /^\d{10}$/.test(v) || "Phone number must be 10 digits",
+      (v: string) => !!v || "Phone number is required",
+      (v: string) => /^\+?\d+$/.test(v) || "Only digits. For example: +79999999999",
     ],
   },
 ];

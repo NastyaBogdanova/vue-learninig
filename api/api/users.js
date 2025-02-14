@@ -65,7 +65,7 @@ const accounts = {
     name: 'Mr. Admin',
     email: 'admin@admin.com',
     password: '123',
-    phone: '564647475'
+    phone: '564647475',
   },
   user: {
     id: 2,
