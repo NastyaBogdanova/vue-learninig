@@ -1,6 +1,6 @@
 <template>
   <v-sheet width="300">
-    <user-account-form :fields="getAccount" />
+    <user-account-form v-if="getAccount.id" :fields="getAccount" />
   </v-sheet>
 </template>
 <script setup>

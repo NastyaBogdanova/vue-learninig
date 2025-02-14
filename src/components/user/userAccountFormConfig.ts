@@ -9,7 +9,7 @@ export const formInputConfig = [
     ],
   },
   {
-    fieldType: "text",
+    fieldType: "email",
     type: "email",
     label: "Email",
     required: true,
@@ -22,7 +22,7 @@ export const formInputConfig = [
     ],
   },
   {
-    fieldType: "text",
+    fieldType: "password",
     type: "password",
     label: "Password",
     required: true,
@@ -34,7 +34,7 @@ export const formInputConfig = [
     ],
   },
   {
-    fieldType: "number",
+    fieldType: "tel",
     type: "phone",
     label: "Phone Number",
     rules: [
