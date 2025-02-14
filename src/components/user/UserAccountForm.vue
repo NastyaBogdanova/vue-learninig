@@ -1,7 +1,6 @@
 <template>
   <v-form fast-fail @submit.prevent>
     <template v-for="(input, key) in formInputs" :key="key">
-      {{ input.value }}
       <v-text-field
         v-model="input.value"
         :rules="input.rules"

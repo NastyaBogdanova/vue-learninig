@@ -36,7 +36,7 @@ export const formInputConfig = [
   {
     fieldType: "tel",
     type: "phone",
-    label: "Phone Number",
+    label: "Phone",
     rules: [
       (v: string) => !!v || "Phone number is required",
       (v: string) => /^\+?\d+$/.test(v) || "Only digits. For example: +79999999999",
