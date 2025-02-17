@@ -16,13 +16,13 @@
   </template>
 
   <script setup lang="ts">
-  import {Task} from '@/types/Task'
+  import { Task } from '@/types/Task';
 
   interface Props {
     task: Task
   }
 
-  defineProps<Props>()
+  defineProps<Props>();
 
   </script>
 

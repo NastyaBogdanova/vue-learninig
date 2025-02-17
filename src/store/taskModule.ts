@@ -12,7 +12,7 @@ export default function useTaskModule () {
       .then((data) => {
         state.tasksList = data;
       })
-      .catch(err => console.log(err))
+      .catch(err => console.log(err));
   };
   return {
     getTasksList: computed(() => state.tasksList),

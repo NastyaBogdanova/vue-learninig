@@ -24,8 +24,8 @@
         v-else
         icon="mdi-login"
         variant="text"
-        @click.stop="login"
         title="Login"
+        @click.stop="login"
       ></v-btn>
     </v-list>
 
@@ -38,8 +38,8 @@
     >
       <RouterLink
         v-for="menuItem in getUser.menu"
-        :to="menuItem.url"
         :key="menuItem.value"
+        :to="menuItem.url"
       >
         <v-list-item
           :prepend-icon="`mdi-${menuItem.icon}`"
@@ -55,10 +55,10 @@
     >
       <div class="pa-2">
         <v-btn
-          @click="logout"
           block
           variant="outlined"
           prepend-icon="mdi-logout"
+          @click="logout"
         >
           Logout
         </v-btn>
