@@ -14,8 +14,8 @@
 </template>
 
 <script setup lang="ts">
-import { formInputConfig } from "@/components/user/userAccountFormConfig";
-import { reactive } from "vue";
+import { formInputConfig } from '@/components/user/userAccountFormConfig';
+import { reactive } from 'vue';
 
 interface IField {
   [key: string]: string;

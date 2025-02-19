@@ -17,7 +17,7 @@ export default function useUserModule () {
     state.user = {} as User;
   };
   const loadAccountInfo = async () => {
-    state.account = await getAccount(state.activeUserType)
+    state.account = await getAccount(state.activeUserType);
   };
   return {
     getUser: computed(() => state.user),
