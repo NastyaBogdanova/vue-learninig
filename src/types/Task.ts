@@ -1,6 +1,6 @@
 import { Component } from 'vue';
 
-export interface Task {
+export interface ITask {
   id: number,
   typeName: string,
   summary: string,

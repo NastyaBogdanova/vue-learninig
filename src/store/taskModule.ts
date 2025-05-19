@@ -1,6 +1,6 @@
 import { computed, reactive } from 'vue';
 import { getTasksRequest } from '@/service/tasks.ts';
-import { Task } from '@/types/Task.ts';
+import { Task } from '@/types/task';
 
 export const state: {tasksList: Task[]} = reactive({
   tasksList: [],

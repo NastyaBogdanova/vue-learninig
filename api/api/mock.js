@@ -1,11 +1,11 @@
 const issues = [
   {
     "id": 101,
-    "typeName": "TASK",
+    "typeName": "BUG",
     "summary": "[TECH] Move HPAC call to store",
     "priorityId": "LOW",
     "done": false,
-    "statusName": "BACKLOG",
+    "statusName": "To Do",
     "projectId": 1000
   },
   {
@@ -14,7 +14,7 @@ const issues = [
     "summary": "Vertical scroll of smartphone version is too sensitive",
     "priorityId": "MEDIUM",
     "done": false,
-    "statusName": "IN_PROGRESS",
+    "statusName": "In Progress",
     "projectId": 2000
   },
   {
@@ -23,7 +23,7 @@ const issues = [
     "summary": "Implement availability check for congstar and enable Exposure through TARDIS",
     "priorityId": "HIGH",
     "done": false,
-    "statusName": "IN_PROGRESS",
+    "statusName": "In Progress",
     "projectId": 1000
   },
   {
@@ -32,7 +32,7 @@ const issues = [
     "summary": "Adjustments for search fields",
     "priorityId": "MEDIUM",
     "done": true,
-    "statusName": "CLOSED",
+    "statusName": "Done",
     "projectId": 2000
   }
 ];

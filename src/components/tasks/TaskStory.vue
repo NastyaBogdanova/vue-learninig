@@ -1,51 +1,28 @@
 <template>
-    <div class="card">
-        <h2>{{ task.summary }}</h2>
-        <div class="cardInfo">
-            <span class="row"><div class="cardSubtitle">Name:</div> {{ task.typeName }}</span>
-            <span class="row"><div class="cardSubtitle">Priority:</div> {{ task.priorityId }}</span>
-            <span class="row"><div class="cardSubtitle">Status:</div> {{ task.statusName }}</span>
-        </div>
-        <div class="cardInfo">
-            <span class="row"><div class="cardSubtitle">Done:</div> {{ task.done }}</span>
-            <span class="row"><div class="cardSubtitle">ID:</div> {{ task.id }}</span>
-            <span class="row"><div class="cardSubtitle">Project ID:</div> {{ task.projectId }}</span>
-        </div>
-    </div>
+  <div class="story-border">
+    <TaskCard :task='task'/>
+  </div>
+</template>
 
-  </template>
+<script setup lang="ts">
+import { ITask } from '@/types/task';
+import TaskCard from './TaskCard.vue';
 
-  <script setup lang="ts">
-  import { Task } from '@/types/Task';
+interface Props {
+  task: ITask;
+}
 
-  interface Props {
-    task: Task
-  }
+defineProps<Props>();
 
-  defineProps<Props>();
+</script>
 
-  </script>
-
-  <style scoped>
-  .card {
-    border: 1px solid black;
-    border-radius: 20px;
-    padding: 20px;
-    height: 100%;
-    box-sizing: border-box;
-  }
-  .cardInfo {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 5px;
-    margin: 20px 0;
-  }
-  .row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  .cardSubtitle {
-    margin-right: 5px;
-  }
-  </style>
+<style scoped>
+.story-border {
+  border: 1px solid rgb(87, 84, 84);
+  border-radius: 20px;
+}
+.story-border:hover {
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 20px;
+}
+</style>
