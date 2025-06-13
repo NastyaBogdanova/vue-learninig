@@ -2,14 +2,14 @@
     <div class="card">
         <h3>{{ task.summary }}</h3>
         <div class="cardInfo">
-        <span class="row"><div class="cardSubtitle">Name:</div> {{ task.typeName }}</span>
-        <span class="row"><div class="cardSubtitle">Priority:</div> {{ task.priorityId }}</span>
-        <span class="row"><div class="cardSubtitle">Status:</div> {{ task.statusName }}</span>
+          <span class="row"><div class="cardSubtitle">Name:</div> {{ task.typeName }}</span>
+          <span class="row"><div class="cardSubtitle">Priority:</div> {{ task.priorityId }}</span>
+          <span class="row"><div class="cardSubtitle">Status:</div> {{ task.statusName }}</span>
         </div>
         <div class="cardInfo">
-        <span class="row"><div class="cardSubtitle">Done:</div> {{ task.done }}</span>
-        <span class="row"><div class="cardSubtitle">ID:</div> {{ task.id }}</span>
-        <span class="row"><div class="cardSubtitle">Project ID:</div> {{ task.projectId }}</span>
+          <span class="row"><div class="cardSubtitle">Done:</div> {{ task.done }}</span>
+          <span class="row"><div class="cardSubtitle">ID:</div> {{ task.id }}</span>
+          <span class="row"><div class="cardSubtitle">Project ID:</div> {{ task.projectId }}</span>
         </div>
     </div> 
 </template>

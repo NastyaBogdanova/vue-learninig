@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 import { ITask } from '@/types/task';
-import TaskCard from './TaskCard.vue';
+import TaskCard from '@/components/tasks/TaskCard.vue';
 
 interface Props {
   task: ITask;
