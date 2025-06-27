@@ -1,7 +1,7 @@
 <template>
   <div class="dashboard">
-      <div v-for="([TaskState, tasks], i) in taskStateEntries" :id="`${TaskState}`" :key="i" class="drop-zone" @dragover.prevent @dragleave.prevent @drop="onDrop($event, TaskState as keyof typeof TaskStates)">
-        <h2 class="">{{ TaskState }}</h2>
+      <div v-for="(tasks, taskStateName, i) in getTasksByState" :id="`${taskStateName}`" :key="i" class="drop-zone" @dragover.prevent @dragleave.prevent @drop="onDrop($event, taskStateName as keyof typeof TaskStates)">
+        <h2 class="">{{ taskStateName }}</h2>
         <ul  class="no-list-style"> 
             <li v-for="(task, i) in tasks" :id="`task-${task.id}`" :key="i" class="m-10 drag-el" draggable="true" @dragstart="startDrag($event, task)">
                 <Task :task='task'/>
@@ -14,7 +14,7 @@
 
 <script setup lang="ts">
 import useTaskModule from '@/store/taskModule.ts';
-import { computed, provide } from 'vue';
+import { provide } from 'vue';
 import { taskRegistry } from '@/components/tasks/taskRegistry.ts';
 import { TaskStates } from '@/types/taskStates';
 import { ITask } from '@/types/task';
@@ -23,8 +23,6 @@ import Task from '@/components/tasks/Task.vue';
 provide('componentRegistry', taskRegistry);
 
 const { getTasksList, getTasksByState } = useTaskModule();
-
-const taskStateEntries = computed(() => Object.entries(getTasksByState.value));
 
 function startDrag(evt: DragEvent, item: ITask) { 
       evt.dataTransfer!.dropEffect = 'move'
