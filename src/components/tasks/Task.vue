@@ -7,7 +7,7 @@
 
 <script setup lang="ts">
 import { ITaskRegistry, ITask } from '@/types/task';
-import { inject, onMounted, shallowRef } from 'vue';
+import { computed, inject } from 'vue';
 
 interface Props {
   task: ITask;
@@ -15,11 +15,6 @@ interface Props {
 
 const props = defineProps<Props>();
 const componentRegistry = inject<ITaskRegistry>('componentRegistry');
-const resolvedComponent = shallowRef();
 
-onMounted(async () => {
-  if (componentRegistry![props.task.typeName]) {
-    resolvedComponent.value = await componentRegistry![props.task.typeName];
-  }
-});
+const resolvedComponent = computed(() => componentRegistry![props.task.typeName]);
 </script>
